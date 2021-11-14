@@ -1,0 +1,69 @@
+
+
+body{background:rgb(25,27,46);color:white;font-size:22px;
+    padding:0;margin:0;
+    }
+    div#superior{background:rgb(220, 220, 220);width:100%;}
+    div#dentrodiv{background:black; margin-bottom:50px; width:100%;}
+    img#logo{width:150px;height:160px; margin-left:30px; }
+    span#cabecalho{color:white;margin-left:900px; font-family: Verdana, Geneva, Tahoma, sans-serif;}
+    span#cabecalho2{color:white;margin-left:80px;font-family: Verdana, Geneva, Tahoma, sans-serif}
+    span#cabecalho3{color:white;margin-left:60px;font-family: Verdana, Geneva, Tahoma, sans-serif}
+    span#cabecalho4{color:white;margin-left:60px;font-family: Verdana, Geneva, Tahoma, sans-serif}
+    .rodapepag{background: rgb(220, 220, 220); width:100%; height:200px; text-align: center; color:rgb(34, 32, 32);}
+    img#artcod{position:relative; bottom:290px; left:570px;}
+    div#divcod{background:black;width:100%;height:500px;padding-top:10px;}
+    .steamicon{width:140px; height: 150px; position:relative; bottom:60px;}
+    img#iconps4cod{margin-left:26%;}
+    h1#h1cod{margin-left:28%; font-size:50px; color:red; font-family: Verdana, Geneva, Tahoma, sans-serif;}
+    .txtleftcod{position:relative; top:80px; left:4px;font-size:15px; font-family: Verdana, Geneva, Tahoma, sans-serif;}
+    .plataformscod{background:white;height: 220px; width: 100%;}
+    .fimcod{width: 100%; height: 50px; background:black; position:relative; bottom:18px;}
+    .buttonlogin{position:absolute; right:120px; top:134px;border-radius: 50%; border:none; 
+        background:rgb(105, 105, 105); width: 50px; height: 30px; color:white;}
+        .buttonregister{position:absolute; right:58px; top:134px; border-radius: 50%; border:none; 
+            background:rgb(105, 105, 105); width: 60px; height: 30px; color:white;}
+            .divghost{background:white; position:relative; bottom:19px;height:1500px; width:100%;}
+            .imgghost{position:relative; width: 100%; height: 1100px;}
+            .precoimgghost{color:black; position:relative; top:90px; left:900px; font-size:40px;}
+            .preconewimgghost{color:black; position:relative; top:140px; left:810px; font-size:50px;}
+            .divprecoghost{background:red; padding-left:40px; padding-top:10px; width:140px;height:80px; font-size:30px;
+            position:relative; top:160px; left:900px; border-radius: 10%;}
+            .compreagorghost{color:white; font-family: Verdana, Geneva, Tahoma, sans-serif;}
+            .imgcatalogogames{width:750px; height:400px;margin-bottom:40px;}
+            .catalogoplataformasps4{position:relative; bottom:440px; left:952px; background: white; width:200px; height:230px; border:3px solid gray;}
+            .iconps4small{position:relative; top:50px; left:40px;width: 126px; height:136px;}
+            .divh1catalogo{position:relative; left:750px; background:white; width:300px; height:70px; padding-bottom:20px; padding-left:80px;}
+            .barracatalogo{background:gray; width:100%; margin-top:150px;}
+            .h1catalogo{color:black; font-size:35px; font-family: Andale Mono, monospace; }
+            .iconswitchsmall{position:relative; left:50px; top:65px;width: 90px; height:93px;}
+            .catalogoplataformasswitch{position:relative; bottom:440px; left:751px; background: black; width:200px; height:230px; border:3px solid gray;}
+            .iconxboxsmall{position:relative; left:30px; top:40px;width: 130px; height:140px;}
+            .catalogoplataformasxbox{position:relative; bottom:676px; left:1600px; background: black; width:200px; height:230px; border:3px solid gray;}
+            .iconxboxsmall{position:relative; left:20px; top:30px;width: 150px; height:160px;}
+            .catalogoplataformasxbox{position:relative; bottom:676px; left:952px; background: black; width:200px; height:230px; border:3px solid gray;}
+            .iconps5small{position:relative; left:1px; top:25px;width: 180px; height:190px;}
+            .catalogoplataformasps5{position:relative; bottom:1148px; left:751px; background: white; width:200px; height:230px; border:3px solid gray;}
+            .artlink{position:relative; bottom:600px;left:50px; }
+            .artmario{position:relative; bottom:892px;left:420px;}
+            .txtdivartlink{background: rgb(57,255,20);  position:relative; left:600px; bottom:1350px; border:2px solid white; 
+                padding-top:90px; width:230px; padding-bottom:120px; padding-left:30px; font-size:30px; color:red;font-family:Verdana, Geneva, Tahoma, sans-serif ;}
+                
+            .txtdivartmario{background: rgb(255,00,00); width:230px; height:210px; position:absolute; left:1020px; top:4920px; z-index:1; border: 2px solid white;
+            font-size:30px; color: rgb(57,255,20);font-family: Verdana, Geneva, Tahoma, sans-serif; padding-top:90px; padding-left:60px;}
+            .divwhitezelda{background:white; position:relative; bottom:2498px; left:420px;width: 900px; height:800px;display: flex;
+                justify-content: center;}
+                .zeldabotwbox{width:280px; height: 420px; position:relative; left:70px; top:90px;}
+                .precoartzeldabotw{color:white;background:red; width:260px; height:160px; border-radius: 50%;display: flex; justify-content: center;align-items: center;
+                font-size:30px; font-family: Verdana, Geneva, Tahoma, sans-serif; position:relative; top:590px; right:120px;}
+                .divwhitemario{background:white; position:relative; bottom:2498px; left:50px;width: 900px; height:800px;display: flex;
+                    justify-content: center;}
+                    .marioodybox{width:280px; height: 420px; position:relative; right:360px; top:90px;}
+                    .precoartmarioody{color:white;background: rgb(57,255,20); width:260px; height:160px; border-radius: 50%;display: flex; justify-content: center;align-items: center;
+                        font-size:30px; font-family: Verdana, Geneva, Tahoma, sans-serif; position:relative; top:585px; left:390px;}
+                        .testimg{position: absolute; top:5600px; left:100px ;width:1200px; height:2000px;}
+
+                        @media only screen and (max-width: 1670px){
+                            .buttonlogin{position:absolute; right:120px;top:134px; border-radius: 50%; border:none; 
+                            background:rgb(105, 105, 105); width: 50px; height: 30px; color:white;}
+                            }
