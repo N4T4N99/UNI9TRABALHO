@@ -41,7 +41,7 @@ sua marca pela famosa experiência.<br> </span>
 <img src="imgs/linkart.jpg" class="artlink">
  <div class="txtdivartlink">As mesmas Fórmulas </div> <div class="txtdivartmario"> O Mesmo <br>Sucesso </div>
 <img src="imgs/marioart.jpg" class="artmario">
-<div class="divwhitezelda"><div class="precoartzeldabotw">Por Apenas: <br>360R$!!!</div>
+<div class="divwhitezelda"><div class="precoartzeldabotw">Por Apenas: <br>250R$!!!</div>
 <a href="pag1.php"><img class="zeldabotwbox" src="imgs/zeldabotwboxart.jpg" alt="Capa Zelda"></a></div>
 <div class="divwhitemario"><div class="precoartmarioody">Por Apenas: <br>280R$!!!</div>
 <a href="pag1.php"><img class="marioodybox" src="imgs/marioodyboxart.jpg" alt="Capa Mario"></a></div>

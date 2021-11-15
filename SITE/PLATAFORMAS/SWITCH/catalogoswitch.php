@@ -1,3 +1,4 @@
+<?php include("../../conexao.php");?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -55,7 +56,7 @@
 
         <!-- lista de itens -->
         
-      </ul>
+        </ul>
       <!-- menu -->
     </section>
     <!-- end container -->
@@ -63,6 +64,15 @@
   <!-- end menu do site -->
 
   <!-- main -->
+
+ <?php 
+ 
+ $sqlcode = "SELECT * FROM jogos where plataforma = 'switch' ";
+$sql_query = $mysqli->query($sqlcode) or die ("ERRO Codigo Banco De Dados ". $mysqli->error );
+$i = 0;
+while($dados = $sql_query->fetch_assoc()){
+ ?>
+
 
 
     <!-- container produtos -->
@@ -78,515 +88,81 @@
       <article class="row">
 
         <!-- produtos -->
-        <a href="produtos/" class="produtos-container col-md-3">
+        <a href="produtos/" class="produtos-container col-md-3"> 
           <!-- imagem do produto -->
-          <img src="jogos/fables1.jpg" class="img-fluid" alt="Fables">
+          
+           <img src="../../jogos/<?php echo $dados['ID'];  ?>.jpg" class="img-fluid">
 
           <!-- itens do produto -->
           <article class="produtos-itens">
             <!-- title produto -->
-            <h2>Kitarina Fables</h2>
+            <h2><a href="../../detalhes/<?php echo $dados['ID']; ?>.php"><?php echo $dados['NOME']; ?></a> </h2>
 
-            <!-- stars -->
-            <div class="produtos-stars">
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              
-            </div>
+      
 
             <!-- preco -->
             <strong class="produtos-preco">
-              R$ 49,99
+              Plataforma: <?PHP echo $dados['PLATAFORMA'];?><br>
+              Genero: <?PHP echo $dados['GENERO'];?><br>
+              Ano De Lançamento: <?PHP echo $dados['ANO'];?>
+              <br><br><br><br><br>
+              R$:<?PHP echo $dados['PRECO'];?>,00
             </strong>
+           
           </article>
           <!-- end itens do produto -->
         </a>
         <!-- end produtos -->
+
+        <?php ++$i;}; while($dados = $sql_query->fetch_assoc() AND $i<=30 )
+        {?>
+          <!-- title -->
+      
+      <!-- listagem dos produtos -->
+      <article class="row">
 
         <!-- produtos -->
-        <a href="./produto-camiseta-manga-comprida.html" class="produtos-container col-md-3">
+        <a href="produtos/" class="produtos-container col-md-3"> 
           <!-- imagem do produto -->
-          <img src="jogos/medium.jpg" class="img-fluid" alt="Camiseta manga comprida">
+          
+           <img src="../../jogos/<?php echo $dados['ID'];  ?>.jpg" class="img-fluid">
 
           <!-- itens do produto -->
           <article class="produtos-itens">
             <!-- title produto -->
-            <h2>The Medium</h2>
+            <h2><a href="../../detalhes/<?php echo $dados['ID']; ?>.php"><?php echo $dados['NOME']; ?></a> </h2>
 
-            <!-- stars -->
-            <div class="produtos-stars">
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-            </div>
+      
 
             <!-- preco -->
             <strong class="produtos-preco">
-              R$ 79,90
+              Plataforma: <?PHP echo $dados['PLATAFORMA'];?><br>
+              Genero: <?PHP echo $dados['GENERO'];?><br>
+              Ano De Lançamento: <?PHP echo $dados['ANO'];?>
+              <br><br><br><br><br>
+              R$:<?PHP echo $dados['PRECO'];?>,00
             </strong>
+           
           </article>
           <!-- end itens do produto -->
         </a>
         <!-- end produtos -->
+          
+<?php }?>
 
-        <!-- produtos -->
-        <a href="#" class="produtos-container col-md-3">
-          <!-- imagem do produto -->
-          <img src="jogos/thegolf.jpg" class="img-fluid" alt="Camiseta listrada">
 
-          <!-- itens do produto -->
-          <article class="produtos-itens">
-            <!-- title produto -->
-            <h2>The Golf</h2>
+        
+        <!-- CONTINUARIA ... produtos -->
+        
+            
 
-            <!-- stars -->
-            <div class="produtos-stars">
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-            </div>
-
-            <!-- preco -->
-            <strong class="produtos-preco">
-              R$ 49,90
-            </strong>
-          </article>
-          <!-- end itens do produto -->
-        </a>
-        <!-- end produtos -->
-
-        <!-- produtos -->
-        <a href="#" class="produtos-container col-md-3">
-          <!-- imagem do produto -->
-          <img src="jogos/family.jpeg" class="img-fluid" alt="Saia plisada">
-
-          <!-- itens do produto -->
-          <article class="produtos-itens">
-            <!-- title produto -->
-            <h2>The Family</h2>
-
-            <!-- stars -->
-            <div class="produtos-stars">
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-            </div>
-
-            <!-- preco -->
-            <strong class="produtos-preco">
-              R$ 180,90
-            </strong>
-          </article>
-          <!-- end itens do produto -->
-        </a>
-        <!-- end produtos -->
-
-        <!-- produtos -->
-        <a href="#" class="produtos-container col-md-3">
-          <!-- imagem do produto -->
-          <img src="" class="img-fluid" alt="Cropped rosa">
-
-          <!-- itens do produto -->
-          <article class="produtos-itens">
-            <!-- title produto -->
-            <h2>Cropped rosa</h2>
-
-            <!-- stars -->
-            <div class="produtos-stars">
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-            </div>
-
-            <!-- preco -->
-            <strong class="produtos-preco">
-              R$ 59,90
-            </strong>
-          </article>
-          <!-- end itens do produto -->
-        </a>
-        <!-- end produtos -->
-
-        <!-- produtos -->
-        <a href="#" class="produtos-container col-md-3">
-          <!-- imagem do produto -->
-          <img src="./assets/images/camiseta-manga-comprida.jpg" class="img-fluid" alt="Camiseta manga comprida">
-
-          <!-- itens do produto -->
-          <article class="produtos-itens">
-            <!-- title produto -->
-            <h2>Camiseta manga comprida</h2>
-
-            <!-- stars -->
-            <div class="produtos-stars">
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-            </div>
-
-            <!-- preco -->
-            <strong class="produtos-preco">
-              R$ 79,90
-            </strong>
-          </article>
-          <!-- end itens do produto -->
-        </a>
-        <!-- end produtos -->
-
-        <!-- produtos -->
-        <a href="#" class="produtos-container col-md-3">
-          <!-- imagem do produto -->
-          <img src="./assets/images/camiseta-listrada.jpg" class="img-fluid" alt="Camiseta listrada">
-
-          <!-- itens do produto -->
-          <article class="produtos-itens">
-            <!-- title produto -->
-            <h2>Camiseta listrada</h2>
-
-            <!-- stars -->
-            <div class="produtos-stars">
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-            </div>
-
-            <!-- preco -->
-            <strong class="produtos-preco">
-              R$ 49,90
-            </strong>
-          </article>
-          <!-- end itens do produto -->
-        </a>
-        <!-- end produtos -->
-
-        <!-- produtos -->
-        <a href="#" class="produtos-container col-md-3">
-          <!-- imagem do produto -->
-          <img src="./assets/images/saia-plisada.jpg" class="img-fluid" alt="Saia plisada">
-
-          <!-- itens do produto -->
-          <article class="produtos-itens">
-            <!-- title produto -->
-            <h2>Saia plisada</h2>
-
-            <!-- stars -->
-            <div class="produtos-stars">
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-            </div>
-
-            <!-- preco -->
-            <strong class="produtos-preco">
-              R$ 117,90
-            </strong>
-          </article>
-          <!-- end itens do produto -->
-        </a>
-        <!-- end produtos -->
-
-        <!-- produtos -->
-        <a href="#" class="produtos-container col-md-3">
-          <!-- imagem do produto -->
-          <img src="./assets/images/cropped-rosa.jpg" class="img-fluid" alt="Cropped rosa">
-
-          <!-- itens do produto -->
-          <article class="produtos-itens">
-            <!-- title produto -->
-            <h2>Cropped rosa</h2>
-
-            <!-- stars -->
-            <div class="produtos-stars">
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-            </div>
-
-            <!-- preco -->
-            <strong class="produtos-preco">
-              R$ 59,90
-            </strong>
-          </article>
-          <!-- end itens do produto -->
-        </a>
-        <!-- end produtos -->
-
-        <!-- produtos -->
-        <a href="#" class="produtos-container col-md-3">
-          <!-- imagem do produto -->
-          <img src="./assets/images/camiseta-manga-comprida.jpg" class="img-fluid" alt="Camiseta manga comprida">
-
-          <!-- itens do produto -->
-          <article class="produtos-itens">
-            <!-- title produto -->
-            <h2>Camiseta manga comprida</h2>
-
-            <!-- stars -->
-            <div class="produtos-stars">
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-            </div>
-
-            <!-- preco -->
-            <strong class="produtos-preco">
-              R$ 79,90
-            </strong>
-          </article>
-          <!-- end itens do produto -->
-        </a>
-        <!-- end produtos -->
-
-        <!-- produtos -->
-        <a href="#" class="produtos-container col-md-3">
-          <!-- imagem do produto -->
-          <img src="./assets/images/camiseta-listrada.jpg" class="img-fluid" alt="Camiseta listrada">
-
-          <!-- itens do produto -->
-          <article class="produtos-itens">
-            <!-- title produto -->
-            <h2>Camiseta listrada</h2>
-
-            <!-- stars -->
-            <div class="produtos-stars">
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-            </div>
-
-            <!-- preco -->
-            <strong class="produtos-preco">
-              R$ 49,90
-            </strong>
-          </article>
-          <!-- end itens do produto -->
-        </a>
-        <!-- end produtos -->
-
-        <!-- produtos -->
-        <a href="#" class="produtos-container col-md-3">
-          <!-- imagem do produto -->
-          <img src="./assets/images/saia-plisada.jpg" class="img-fluid" alt="Saia plisada">
-
-          <!-- itens do produto -->
-          <article class="produtos-itens">
-            <!-- title produto -->
-            <h2>Saia plisada</h2>
-
-            <!-- stars -->
-            <div class="produtos-stars">
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-              </svg>
-            </div>
-
-            <!-- preco -->
-            <strong class="produtos-preco">
-              R$ 117,90
-            </strong>
-          </article>
-          <!-- end itens do produto -->
-        </a>
-        <!-- end produtos -->
-
-      </article>
+      
       <!-- listagem dos produtos -->
       <!-- end container produtos -->
-  </main>
+  
   <!-- end main -->
 
-  <div class="faixa">
-	<ul >
-	    <li class="bordali"> <a href="catalogoswitch.php">1</a></li>
-    	<li class="bordali"><a href="catalogoswitch2.php">2</a></li>
-    	<li class="bordali"><a href="catalogoswitch3.php">3</a></li>
-    	<li class="bordali"><a href="catalogoswitch4.php">4</a></li>
-    	<li class="bordali"><a href="catalogoswitch5.php">5</a></li>
-      
-	</ul>
-</div> 
+  
 
   <footer class="rodapepag"> <p> Loja Virtual TrueGaming<sup>&reg;</sup> </p>
 Todos Os Direitos Reservados. 

@@ -38,6 +38,11 @@ include ("../../conexao.php");
     </div> 
 
     <div class="divimgplataforma">  <div class="txtimgplataforma">LANÇAMENTOS </div> </div>
+                             
+
+                                    <!-- COPIAR DAQUI PRA BAIXO PAG: LANÇAMENTO!!! -->  
+
+
 
   <!-- menu do site -->
   
@@ -58,7 +63,7 @@ include ("../../conexao.php");
 
  <?php 
  
- $sqlcode = "SELECT * FROM jogos  ";
+ $sqlcode = "SELECT * FROM jogos where ANO >=2021  ";
 $sql_query = $mysqli->query($sqlcode) or die ("ERRO Codigo Banco De Dados ". $mysqli->error );
 $i = 0;
 while($dados = $sql_query->fetch_assoc()){
