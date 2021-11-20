@@ -31,7 +31,7 @@
 
 <div class="divseparatoria"> <h1 class="titlegame"> 
     
-                     <!--TITULO-->              GTA TRILOGY: The Definitive Edition
+                     <!--TITULO-->            Marvel´s Spider-Man
 
 
 
@@ -47,7 +47,7 @@
     
     
                                                            <!-- IMG -->  
-                               <!-- CAPA -->    <img src="../jogos/1.jpg" class="tamcapa"> 
+                               <!-- CAPA -->    <img src="../jogos/22.jpg" class="tamcapa"> 
   
   
   

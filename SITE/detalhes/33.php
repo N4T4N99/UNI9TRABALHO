@@ -31,7 +31,7 @@
 
 <div class="divseparatoria"> <h1 class="titlegame"> 
     
-                     <!--TITULO-->              GTA TRILOGY: The Definitive Edition
+                     <!--TITULO-->            DIRT 5
 
 
 
@@ -47,7 +47,7 @@
     
     
                                                            <!-- IMG -->  
-                               <!-- CAPA -->    <img src="../jogos/1.jpg" class="tamcapa"> 
+                               <!-- CAPA -->    <img src="../jogos/33.jpg" class="tamcapa"> 
   
   
   

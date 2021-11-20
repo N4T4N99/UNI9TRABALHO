@@ -31,7 +31,7 @@
 
 <div class="divseparatoria"> <h1 class="titlegame"> 
     
-                     <!--TITULO-->              GTA TRILOGY: The Definitive Edition
+                     <!--TITULO-->       Super Mario 3D World Deluxe
 
 
 
@@ -47,7 +47,7 @@
     
     
                                                            <!-- IMG -->  
-                               <!-- CAPA -->    <img src="../jogos/1.jpg" class="tamcapa"> 
+                               <!-- CAPA -->    <img src="../jogos/70.jpg" class="tamcapa"> 
   
   
   
