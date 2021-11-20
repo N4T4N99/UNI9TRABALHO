@@ -1,4 +1,9 @@
-<?php include("../../conexao.php");?>
+<?php
+include ("../../conexao.php");
+$pesquisa = isset($_GET['searchgame'])? $_GET['searchgame']:"INVALIDSEARCH25";
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,26 +18,14 @@
   <!-- end Favicons -->
 
   <!-- Css -->
-  <style> 
-  @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
-.divimgplataforma{
-        background-image: url("../../imgs/gowwalp.jpg"); 
-        background-color: #cccccc;
-        width:100%; height:450px;       
-    }
-    .txtimgplataforma{
-        font-size:94px; font-family: 'Staatliches', cursive; 
-        position:absolute; top:400px; left:820px; color:white; 
-        -webkit-text-stroke-width: 2px;
-        -webkit-text-stroke-color: #000;
-        
-    }
-</style>
-<link rel="stylesheet" href="../../stylegeral3.css">
+  <link rel="stylesheet" href="../../stylegeral2.css">
   <link rel="stylesheet" href="../../style_catalogo.css">
   
 
-
+<style>
+  
+ 
+  </style>
 </head>
 
 <body>
@@ -43,9 +36,14 @@
      <a href="../../index.php"><span id="cabecalho"> Plataformas &#9660; <span> </a>
      <a href="../LANCAMENTOS/paglancamentos.php"> <span id="cabecalho2"> Lançamentos <span> </a><a href="../PROMOCOES/pagpromocoes.php"> <span id="cabecalho3"> Promoçoes <span> </a>
      <a href="../../pagsuporte.php"> <span id="cabecalho4"> Suporte <span> </a></form>
-    </div>
+    </div> 
 
-    <div class="divimgplataforma">  <div class="txtimgplataforma"> PS4 GAMES </div> </div>
+    <div class="divimgplataforma">  <div class="txtimgplataforma"><?php echo $pesquisa?> </div> </div>
+                             
+
+                                    <!-- COPIAR DAQUI PRA BAIXO PAG: LANÇAMENTO!!! -->  
+
+
 
   <!-- menu do site -->
   
@@ -55,7 +53,7 @@
 
         <!-- lista de itens -->
         
-        </ul>
+      </ul>
       <!-- menu -->
     </section>
     <!-- end container -->
@@ -66,7 +64,7 @@
 
  <?php 
  
- $sqlcode = "SELECT * FROM jogos where Plataforma = 'PS4'  ";
+ $sqlcode = "SELECT * FROM jogos where NOME like '%$pesquisa%'  ";
 $sql_query = $mysqli->query($sqlcode) or die ("ERRO Codigo Banco De Dados ". $mysqli->error );
 $i = 0;
 while($dados = $sql_query->fetch_assoc()){
@@ -147,7 +145,9 @@ while($dados = $sql_query->fetch_assoc()){
         </a>
         <!-- end produtos -->
           
-<?php }?>
+<?php }; if($sql_query->num_rows == 0){?>
+    <h1>Nenhum Jogo Encontrado... (<?php echo $pesquisa; ?>)</h1>
+    <?php ;};?>
 
 
         
